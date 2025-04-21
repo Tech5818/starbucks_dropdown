@@ -29,7 +29,7 @@
 .menu>ul>li {
     margin-top: 50px;
     padding: 10px 20px;
-    position: relative;
+    /* position: relative; */
     height: 50px;
 }
 
@@ -47,24 +47,33 @@
 }
 
 .dropdown {
-    display: none;
-    position: fixed;
+    /* display: none; */
+    position: absolute;
     left: 0;
-    top: 120px;
+    top: 100%;
     width: 100vw;
     background-color: #333;
     color: #999;
     z-index: 1;
-    padding: 0 200px 10px;
+    /* padding: 0 200px 10px; */
+    /* new code */
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height .5s ease-out;
+    box-sizing: unset;
 }
 
-.menu>ul>li:hover .dropdown {
-    display: block;
+.menu>ul>li:hover>.dropdown {
+    /* display: block; */
+    /* new code */
+    max-height: 500px;
+    transition: max-height .8s ease-out;
 }
 
 .dropdown>ul {
     display: flex;
-    margin-left: 200px;
+    /* margin-left: 200px; */
+    padding: 0 200px 10px;
 }
 
 .dropdown>ul>li {
